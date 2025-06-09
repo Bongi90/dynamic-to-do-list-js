@@ -4,28 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
-    const messageBox = document.getElementById('message-box');
-    const messageText = document.getElementById('message-text');
-    const messageCloseBtn = document.getElementById('message-close-btn');
+    // Removed messageBox, messageText, messageCloseBtn as alert() will be used
 
-    /**
-     * Displays a custom message box with the given text.
-     * @param {string} message - The message to display.
-     */
-    function showMessage(message) {
-        messageText.textContent = message;
-        messageBox.style.display = 'block'; // Show the message box
-    }
-
-    /**
-     * Hides the custom message box.
-     */
-    function hideMessage() {
-        messageBox.style.display = 'none'; // Hide the message box
-    }
-
-    // Attach event listener to the message box close button
-    messageCloseBtn.addEventListener('click', hideMessage);
+    // Removed showMessage and hideMessage functions as alert() will be used
+    // Removed event listener for messageCloseBtn as alert() will be used
 
     /**
      * Defines the addTask function, responsible for adding new tasks to the list.
@@ -37,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check if taskText is not empty.
         if (taskText === "") {
-            // If empty, prompt the user to enter a task using the custom message box.
-            showMessage("Please enter a task.");
+            // If empty, use alert to prompt the user to enter a task, as specified.
+            alert("Please enter a task.");
             return; // Exit the function if the input is empty.
         }
 
@@ -73,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // When the button is clicked, the addTask function will be called.
     addButton.addEventListener('click', addTask);
 
-    // Attach an event listener to the task input field for the 'keypress' event.
+    // Attach an listener to the task input field for the 'keypress' event.
     // This allows tasks to be added by pressing the "Enter" key.
     taskInput.addEventListener('keypress', function(event) {
         // Check if the pressed key is 'Enter'.
@@ -84,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Invoke the addTask function on DOMContentLoaded, as requested.
+// Invoke the addTask function on DOMContentLoaded.
 // This new listener will call addTask() immediately when the page loads.
 // Note: As the input field is initially empty, this will cause the "Please enter a task"
 // message box to appear automatically on page load.
