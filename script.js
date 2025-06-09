@@ -65,11 +65,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-// Invoke the addTask function on DOMContentLoaded.
-// This new listener will call addTask() immediately when the page loads.
-// Note: As the input field is initially empty, this will cause the "Please enter a task"
-// message box to appear automatically on page load.
-document.addEventListener('DOMContentLoaded', function() {
-    addTask();
-});
